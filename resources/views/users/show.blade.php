@@ -10,6 +10,11 @@
      <section class="stats mt-2">
       @include('shared._stats', ['user' => $user])
     </section>
+
+    @if (Auth::check())
+      @include('users._follow_form')
+    @endif
+
     <hr>
     <section class="status">
       @if ($statuses->count() > 0)
